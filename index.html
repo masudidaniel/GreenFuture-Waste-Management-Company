@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenFuture Waste Management Company</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#Services">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="Contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div>
+    <div class="social-icons">
+ <a href="https://wa.me/+254702883425" style="background-color:green;"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://www.facebook.com/profile.php?id=61550666797166&mibextid=ZbWKwL" style="background-color:blue;"><i class="fab fa-facebook-f"></i></a>
+  <a href="tiktok.com/@daniel_masudi"><i class="fab fa-tiktok"></i></a>
+ <a href="https://www.instagram.com/danielmasudi349"><i class="fab fa-instagram"></i></a>
+  <a href="https://x.com/MasudiDaniel"><i class="fab fa-twitter"></i></a>   
+</div>
+    <div class="marquee-container">
+        <div class="marquee">Welcome to GreenFuture. A one stop solution for waste maanagement solutions.</div>
+    </div>      
+          
+<section id="Home">
+    <img src="images.jpeg" alt="loading">
+    <p>GreenFuture Waste Management Company strives as a leading waste managemet in Kenya, providing waste management solutions and cleaning servicesto clients. We are incorporated since 2016 and committed to environment sustainable solutions for a greener future.</p>
+</section>
+
+<section id="About">
+    <h2>Our Mission</h2>
+    <p>Dedicated to providing sustainable waste management and Cleaning services to help protect our planet for future generation</p>
+</section>
+
+<section id="services">
+    <h2>Our Services</h2>
+    <ul>
+        <li>Cleaning Services</li>
+        <li>Recycling and Reuse</li>
+        <li>Waste Collection and Disposal</li>
+        <li>Composting Solutions</li>
+        <li>Environmental Consultancy</li>
+    </ul>
+</section>
+<section id="Contact">
+    <h2>Contact Us</h2>
+    <form action="Submit_form.php" method="post">
+    <label for="Name">Name:</label>
+    <input type="text" id="Name" name="name" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="Phone">Phone:</label>
+    <input type="tel" id="phone" name="Phone">
+    <label for="Message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+    <button type="submit">submit</button>
+    </form>
+</section>
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        emailjs.init("e1UMcON0EB8g_kNaW"); 
+    })();
+</script>
+
+<script type="text/javascript">
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+               const emailParams = {
+            from_name: this.from_name.value,
+            from_email: this.from_email.value,
+            phone_number: this.phone_number.value,
+            message: this.message.value,
+            reply_to: this.from_email.value 
+        };
+
+        emailjs.send('service_b7euldc', 'template_owo79wr', emailParams)
+            .then(function() {
+                alert('Thank you for contacting us!');
+                document.getElementById('contact-form').reset();
+            }, function(error) {
+                console.log('FAILED...', error);
+                alert('An error occurred. Please try again.');
+            });
+    });
+</script>
+         
+<footer>
+    <h1>GreenFuture Waste Management Company</h1>
+    <p>Your Wastes, Our Priority</p>           
+    <p>&copy; 2024 GreenFuture Waste Management Co Ltd. Your Waste Management Partner Company / All rights reserved.</p>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>
